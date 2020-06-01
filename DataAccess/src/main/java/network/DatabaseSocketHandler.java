@@ -113,15 +113,6 @@ public class DatabaseSocketHandler implements Runnable {
                         sendToClient(addResponse);
                     }
                 }
-                /*
-                else if(receivedPieces[0].equals("GetUsersIDName")) {
-                    System.out.println("Trying to get users");
-                    List<User> users_id_name = daoFactory.getUserDAO().getUsersIdName(receivedPieces[1]);
-                    String userJson = gson.toJson(users_id_name);
-                    sendToClient(userJson);
-                }
-
-                 */
                 else if(receivedPieces[0].equals("GetManagedUsers")){
                     System.out.println("Trying to get users managed by manager ID " + receivedPieces[1]);
                     List<User> managedUsers = daoFactory.getUserDAO().getUsersByManager(receivedPieces[1]);

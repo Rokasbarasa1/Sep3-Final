@@ -99,35 +99,6 @@ public class UserDAO implements IUserDAO {
         }
         return user;
     }
-    /*
-    @Override
-    public ArrayList<User> getUsersIdName(String managerId) {
-
-        String sql = "SELECT users_ID, manager_ID, firstName FROM " + databaseConnection.getUserTable() + " WHERE manager_ID = " + managerId + " AND status = 'ACTIVE';";
-        ArrayList<User> users_id_name = new ArrayList<>();
-
-        try {
-            PreparedStatement preparedStatement = databaseConnection.createPreparedStatement(sql);
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            while ( resultSet.next()) {
-                int id = resultSet.getInt("users_ID");
-                int manager_id = resultSet.getInt("manager_ID");
-                String name = resultSet.getString("firstName");
-
-                users_id_name.add(new User(id, manager_id, name));
-            }
-
-        } catch (DataConnectionException | SQLException throwables) {
-            throwables.printStackTrace();
-        } finally {
-            databaseConnection.closeConnection();
-        }
-
-        return users_id_name;
-    }
-
-     */
 
     @Override
     public ArrayList<User> getUsersByManager(String managerId) {
