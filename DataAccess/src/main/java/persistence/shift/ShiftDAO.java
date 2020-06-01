@@ -99,7 +99,9 @@ public class ShiftDAO implements IShiftDAO {
         if(operation.equals("Check")){
             try {
                 String sql = "SELECT Users_ID, Manager_ID, description, day, month, year FROM "
-                        + databaseConnection.getShiftTable() + " WHERE Users_ID = "+ shift.getUser_id() + " AND day = '" + shift.getDate().getDayOfMonth() +"' AND month = '" + shift.getDate().getMonthValue() +"'AND year = '" + shift.getDate().getYear() +"';";
+                        + databaseConnection.getShiftTable() + " WHERE Users_ID = "+ shift.getUser_id()
+                        + " AND day = '" + shift.getDate().getDayOfMonth() +"' AND month = '" + shift.getDate().getMonthValue()
+                        +"'AND year = '" + shift.getDate().getYear() +"';";
                 preparedStatement = databaseConnection.createPreparedStatement(sql);
                 resultSet = preparedStatement.executeQuery();
                 System.out.println("In the add shift");

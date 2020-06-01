@@ -54,18 +54,6 @@ public class ViewHandler {
         mainStage.setScene(calendarScene);
     }
 
-    public void openCalendarViewOld() {
-        FXMLLoader loader = new FXMLLoader();
-        if (calendarScene == null) {
-            Parent root = getRootByPath("calendar/Calendar.fxml", loader);
-            CalendarViewController controller = loader.getController();
-            controller.init(viewModelFactory.getCalendarViewModel(), this);
-            calendarScene = new Scene(root);
-        }
-        mainStage.setTitle("Calendar");
-        mainStage.setScene(calendarScene);
-    }
-
     public void openCreateUserView() {
         FXMLLoader loader = new FXMLLoader();
         Parent root = getRootByPath("createUser/CreateUser.fxml", loader);
