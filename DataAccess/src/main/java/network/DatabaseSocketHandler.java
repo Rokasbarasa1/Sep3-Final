@@ -120,7 +120,7 @@ public class DatabaseSocketHandler implements Runnable {
                     String userJson = gson.toJson(users_id_name);
                     sendToClient(userJson);
                 }
-                
+
                  */
                 else if(receivedPieces[0].equals("GetManagedUsers")){
                     System.out.println("Trying to get users managed by manager ID " + receivedPieces[1]);

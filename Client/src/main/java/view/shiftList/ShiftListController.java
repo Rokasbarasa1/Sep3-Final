@@ -32,6 +32,9 @@ public class ShiftListController {
     private Button deleteButton;
     @FXML
     private Button editButton;
+    @FXML
+    private Button addShift;
+
 
     private ViewHandler viewHandler;
     private ShiftListViewModel viewModel;
@@ -41,8 +44,8 @@ public class ShiftListController {
         viewHandler = vh;
         viewModel = vm;
         shiftID.setCellValueFactory(new PropertyValueFactory<Shift, Integer>("id"));
-        managerID.setCellValueFactory(new PropertyValueFactory<Shift, Integer>("user_id"));
-        workerID.setCellValueFactory(new PropertyValueFactory<Shift, Integer>("manager_id"));
+        managerID.setCellValueFactory(new PropertyValueFactory<Shift, Integer>("manager_id"));
+        workerID.setCellValueFactory(new PropertyValueFactory<Shift, Integer>("user_id"));
         dateID.setCellValueFactory(new PropertyValueFactory<Shift, LocalDate>("date"));
         descriptionID.setCellValueFactory(new PropertyValueFactory<Shift, String>("description"));
 
@@ -87,5 +90,10 @@ public class ShiftListController {
         Shift seleced = table.getSelectionModel().getSelectedItem();
         viewModel.saveShiftForEditing(seleced);
         //viewHandler.openEditShift();
+    }
+
+    @FXML
+    void onAddShift(ActionEvent event) {
+        viewHandler.openAddShiftView();
     }
 }

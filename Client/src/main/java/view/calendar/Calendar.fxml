@@ -306,9 +306,8 @@
                               <Button fx:id="logOff" layoutX="136.0" layoutY="100.0" mnemonicParsing="false" onAction="#logOut" text="LogOut" />
                               <Label fx:id="user" layoutX="25.0" layoutY="95.0" text="User: " />
                               <Label fx:id="access" layoutX="14.0" layoutY="116.0" text="Access: " />
-                              <Button fx:id="createShift" layoutX="70.0" layoutY="219.0" mnemonicParsing="false" onAction="#onAddShift" text="Add Shift" />
-                              <Button fx:id="employeeListButton" layoutX="59.0" layoutY="166.0" mnemonicParsing="false" onAction="#onEmployeeList" text="Employee List" />
-                              <Button fx:id="shiftList" layoutX="31.0" layoutY="278.0" mnemonicParsing="false" onAction="#onOpenShiftList" text="Open shift list for month" />
+                              <Button fx:id="employeeListButton" layoutX="61.0" layoutY="185.0" mnemonicParsing="false" onAction="#onEmployeeList" text="Employee List" />
+                              <Button fx:id="shiftList" layoutX="32.0" layoutY="151.0" mnemonicParsing="false" onAction="#onOpenShiftList" text="Open shift list for month" />
                            </children></AnchorPane>
                      </children>
                   </VBox>

@@ -37,7 +37,7 @@ public class AddShiftController {
                 , descriptionTextField.getText()
         );
         if(response.getText().equals("Success")){
-            viewHandler.openCalendarView();
+            viewHandler.openShiftListView();
         }
     }
 
@@ -45,7 +45,7 @@ public class AddShiftController {
         addShiftViewModel.clearFields();
         employeeComboBox.getSelectionModel().select(1);
         shiftDatePicker.setValue(null);
-        viewHandler.openCalendarView();
+        viewHandler.openShiftListView();
     }
 
     public void onResetButton(ActionEvent event) {

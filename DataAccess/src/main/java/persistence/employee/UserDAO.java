@@ -89,7 +89,7 @@ public class UserDAO implements IUserDAO {
 
                 String dateString = day + "-" + month + "-" + year;
                 System.out.println(dateString);
-                LocalDate date = LocalDate.parse(dateString, DateTimeFormatter.ofPattern("dd-M-yyyy"));;
+                LocalDate date = LocalDate.parse(dateString, DateTimeFormatter.ofPattern("d-M-yyyy"));;
                 user = new User(id, manager_id,  username,  password,  name,  lastname,  email,  status,  date,  accessLevel);
             }
         } catch (DataConnectionException | SQLException e) {
