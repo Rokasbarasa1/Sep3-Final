@@ -8,5 +8,5 @@ import java.util.ArrayList;
 public interface IAddShiftClient {
     String postShift(Shift shift);
     String getResponse();
-    ArrayList<User> getUsers(int managerId);
+    ArrayList<User> getEmployees(int managerId);
 }

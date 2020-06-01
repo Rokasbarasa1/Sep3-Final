@@ -20,7 +20,7 @@ public class AddShiftModel implements IAddShiftModel {
     }
 
     public ArrayList<String> getUsers() {
-        userMap = client.getUsers(loginModel.getCurrentUser().getId());
+        userMap = client.getEmployees(loginModel.getCurrentUser().getId());
         ArrayList<String> listOfNames = new ArrayList<String>();
         for (User user : userMap)
         {
