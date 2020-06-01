@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="346.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.addshift.AddShiftController">
+    <children>
+        <Label layoutX="50.0" layoutY="25.0" text="Shift date:">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="50.0" layoutY="121.0" text="Description:">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="descriptionTextField" alignment="TOP_LEFT" layoutX="50.0" layoutY="146.0" prefHeight="120.0" prefWidth="531.0" promptText="Shift description" />
+        <ComboBox fx:id="employeeComboBox" layoutX="382.0" layoutY="54.0" prefHeight="25.0" prefWidth="193.0" promptText="Choose an employee" />
+        <Label layoutX="382.0" layoutY="25.0" text="Employee:">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <Button layoutX="455.0" layoutY="270.0" mnemonicParsing="false" onAction="#onSubmitButton" text="Submit" />
+        <Button layoutX="50.0" layoutY="270.0" mnemonicParsing="false" onAction="#onCancelButton" text="Cancel" />
+        <Button layoutX="524.0" layoutY="270.0" mnemonicParsing="false" onAction="#onResetButton" text="Reset" />
+        <Label fx:id="response" layoutX="118.0" layoutY="266.0" prefHeight="39.0" prefWidth="334.0" />
+        <DatePicker fx:id="shiftDatePicker" layoutX="50.0" layoutY="54.0" prefHeight="39.0" prefWidth="193.0" />
+    </children>
+</AnchorPane>

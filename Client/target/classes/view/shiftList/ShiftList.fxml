@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="394.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.shiftList.ShiftListController">
+   <children>
+      <TableView fx:id="table" layoutX="11.0" layoutY="16.0" prefHeight="341.0" prefWidth="746.0">
+        <columns>
+          <TableColumn fx:id="shiftID" prefWidth="47.0" text="ID" />
+          <TableColumn fx:id="managerID" prefWidth="77.0" text="Manager ID" />
+            <TableColumn fx:id="workerID" prefWidth="72.0" text="Worker ID" />
+            <TableColumn fx:id="dateID" prefWidth="122.0" text="Date" />
+            <TableColumn fx:id="descriptionID" prefWidth="427.0" text="Description" />
+        </columns>
+      </TableView>
+      <Button fx:id="deleteButton" layoutX="82.0" layoutY="361.0" mnemonicParsing="false" onAction="#onDeleteShift" text="Delete shift" />
+      <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onBack" text="Back" />
+      <Button fx:id="editButton" layoutX="178.0" layoutY="361.0" mnemonicParsing="false" text="Edit Shift" />
+   </children>
+</AnchorPane>

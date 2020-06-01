@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="425.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.createUser.CreateUserController">
+    <children>
+        <Label fx:id="labelUsername" layoutX="50.0" layoutY="25.0" text="Username:">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelPassword" layoutX="301.0" layoutY="25.0" text="Password:">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="usernameTextField" layoutX="50.0" layoutY="50.0" promptText="Donald..." />
+        <TextField fx:id="passwordTextField" layoutX="301.0" layoutY="50.0" promptText="Duck..." />
+        <Label fx:id="labelFirstname" layoutX="50.0" layoutY="100.0" text="First name:">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelLastname" layoutX="301.0" layoutY="100.0" text="Last Name:">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="firstnameTextField" layoutX="50.0" layoutY="125.0" promptText="Donald..." />
+        <TextField fx:id="lastnameTextField" layoutX="301.0" layoutY="125.0" promptText="Trump..." />
+        <Label fx:id="labelEmail" layoutX="50.0" layoutY="175.0" text="Email:">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="emailTextField" layoutX="50.0" layoutY="200.0" prefHeight="25.0" prefWidth="401.0" promptText="donald-drump@mail.com..." />
+        <ComboBox fx:id="statusComboBox" layoutX="50.0" layoutY="275.0" onAction="#statusComboBox" prefWidth="150.0" promptText="Choose a status" />
+        <ComboBox fx:id="accessLevelComboBox" layoutX="301.0" layoutY="275.0" onAction="#accessLevelComboBox" prefWidth="150.0" promptText="Choose accesslevel" />
+        <Label fx:id="labelStatus" layoutX="50.0" layoutY="250.0" text="Status:">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <Label fx:id="labelAccesslevel" layoutX="301.0" layoutY="250.0" text="Access Level:">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <Button layoutX="50.0" layoutY="325.0" mnemonicParsing="false" onAction="#onSubmitButton" text="Submit" />
+        <Button layoutX="137.0" layoutY="325.0" mnemonicParsing="false" onAction="#onCancelButton" text="Cancel" />
+        <Button layoutX="406.0" layoutY="325.0" mnemonicParsing="false" onAction="#onResetButton" text="Reset" />
+        <Label fx:id="response" layoutX="50.0" layoutY="375.0" />
+        <Label fx:id="labelStatusString" layoutX="100.0" layoutY="250.0" />
+        <Label fx:id="labelAccesslevelString" layoutX="385.0" layoutY="250.0" />
+    </children>
+</AnchorPane>
