@@ -67,7 +67,7 @@ public class ShiftListController {
         if(shift != null){
             boolean delete = false;
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Delete user");
+            alert.setTitle("Delete shift");
             alert.setHeaderText("Do you want to delete this shift?");
 
             ButtonType cancelButtonType =  new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);

@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="401.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.employeeList.EmployeeListController">
    <children>
       <Button layoutX="22.0" layoutY="351.0" mnemonicParsing="false" onAction="#onBack" text="Back" />
-      <Button layoutX="93.0" layoutY="351.0" mnemonicParsing="false" onAction="#onCreateEmployee" text="Create employee" />
+      <Button layoutX="518.0" layoutY="351.0" mnemonicParsing="false" onAction="#onCreateEmployee" text="Create employee" />
       <TableView fx:id="tableOfEmployees" layoutX="10.0" layoutY="8.0" prefHeight="333.0" prefWidth="689.0">
         <columns>
           <TableColumn fx:id="tableID" prefWidth="38.0" text="ID" />
@@ -20,6 +20,6 @@
             <TableColumn fx:id="tableStatus" prefWidth="83.0" text="Status" />
         </columns>
       </TableView>
-      <Button layoutX="211.0" layoutY="351.0" mnemonicParsing="false" onAction="#onDeleteUser" text="Delete" />
+      <Button layoutX="636.0" layoutY="351.0" mnemonicParsing="false" onAction="#onDeleteUser" text="Delete" />
    </children>
 </AnchorPane>

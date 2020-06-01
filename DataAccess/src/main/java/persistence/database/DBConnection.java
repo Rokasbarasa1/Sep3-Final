@@ -9,7 +9,7 @@ public class DBConnection implements IDBConnection {
     private final String driver = "com.mysql.cj.jdbc.Driver";
     private final String url = "jdbc:mysql://localhost:3306/sep3?useTimezone=true&serverTimezone=GMT";
     private final String username = "root";
-    private final String password = "augis123"; //change to your password
+    private final String password = "Ruf84yww"; //change to your password
 
 
     private final String schemaName;
