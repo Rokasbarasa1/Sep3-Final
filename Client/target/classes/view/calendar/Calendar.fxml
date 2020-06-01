@@ -303,7 +303,6 @@
                            <children>
                               <ComboBox fx:id="monthsBox" layoutX="34.0" layoutY="2.0" onAction="#onSelectMonth" prefWidth="150.0" />
                               <ComboBox fx:id="yearBox" layoutX="34.0" layoutY="35.0" onAction="#onSelectMonth" prefWidth="150.0" />
-                              <Button fx:id="logOff" layoutX="136.0" layoutY="100.0" mnemonicParsing="false" onAction="#logOut" text="LogOut" />
                               <Label fx:id="user" layoutX="25.0" layoutY="95.0" text="User: " />
                               <Label fx:id="access" layoutX="14.0" layoutY="116.0" text="Access: " />
                               <Button fx:id="employeeListButton" layoutX="61.0" layoutY="185.0" mnemonicParsing="false" onAction="#onEmployeeList" text="Employee List" />

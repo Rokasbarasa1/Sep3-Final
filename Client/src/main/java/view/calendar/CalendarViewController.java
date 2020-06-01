@@ -237,10 +237,6 @@ public class CalendarViewController {
     }
 
     @FXML
-    void logOut(ActionEvent event) {
-        viewHandler.openLoginView();
-    }
-    @FXML
     void onOpenShiftList(ActionEvent event) {
         viewHandler.openShiftListView();
     }
