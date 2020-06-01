@@ -99,7 +99,7 @@ public class UserDAO implements IUserDAO {
         }
         return user;
     }
-
+    /*
     @Override
     public ArrayList<User> getUsersIdName(String managerId) {
 
@@ -126,6 +126,8 @@ public class UserDAO implements IUserDAO {
 
         return users_id_name;
     }
+
+     */
 
     @Override
     public ArrayList<User> getUsersByManager(String managerId) {
