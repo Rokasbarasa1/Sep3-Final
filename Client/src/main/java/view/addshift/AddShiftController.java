@@ -32,7 +32,10 @@ public class AddShiftController {
     }
 
     public void onSubmitButton(ActionEvent event) {
-        addShiftViewModel.submitShift(shiftDatePicker.getValue(), employeeComboBox.getValue(), descriptionTextField.getText());
+        addShiftViewModel.submitShift(shiftDatePicker.getValue()
+                , employeeComboBox.getValue()
+                , descriptionTextField.getText()
+        );
         if(response.getText().equals("Success")){
             viewHandler.openCalendarView();
         }

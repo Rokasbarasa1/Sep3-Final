@@ -24,7 +24,7 @@ public class AddShiftModel implements IAddShiftModel {
         ArrayList<String> listOfNames = new ArrayList<String>();
         for (User user : userMap)
         {
-            listOfNames.add(user.getFname());
+            listOfNames.add(user.getFname() + " " + user.getUsername());
         }
         return listOfNames;
     }
