@@ -22,8 +22,8 @@ public class EmployeeListClient implements IEmployeeListClient {
         String PATH ="http://127.0.0.1:5000/api/user/?managerId="+ managerId;
         response = httpHandler.getFromAPI(PATH);
         Type listType = new TypeToken<ArrayList<User>>(){}.getType();
-        ArrayList<User> shifts = jsonSerializer.fromJson(response, listType);
-        return shifts;
+        ArrayList<User> users = jsonSerializer.fromJson(response, listType);
+        return users;
     }
 
     @Override

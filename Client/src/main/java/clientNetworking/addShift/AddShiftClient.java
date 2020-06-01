@@ -36,12 +36,25 @@ public class AddShiftClient implements IAddShiftClient {
 
     @Override
     public ArrayList<User> getUsers(int managerId) {
+
+
+        String PATH ="http://127.0.0.1:5000/api/user/?managerId="+ managerId;
+        response = httpHandler.getFromAPI(PATH);
+        Type listType = new TypeToken<ArrayList<User>>(){}.getType();
+        ArrayList<User> users = jsonSerializer.fromJson(response, listType);
+        return users;
+        /*
         String PATH ="http://127.0.0.1:5000/api/user/id-name?managerId=" + managerId;
         System.out.println("Getting users available for shifts");
         response = httpHandler.getFromAPI(PATH);
 
         Type type = new TypeToken<ArrayList<User>>(){}.getType();
         ArrayList<User> userList = jsonSerializer.fromJson(response, type);
+        for (int i = 0; i < userList.size() ; i++) {
+            System.out.println(userList.get(i).getUsername());
+        }
         return userList;
+
+         */
     }
 }
