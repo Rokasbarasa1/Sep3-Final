@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="394.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.shiftList.ShiftListController">
+<AnchorPane prefHeight="394.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.shiftList.ShiftListController">
    <children>
       <TableView fx:id="table" layoutX="11.0" layoutY="16.0" prefHeight="341.0" prefWidth="746.0">
         <columns>
@@ -16,9 +16,8 @@
             <TableColumn fx:id="descriptionID" prefWidth="427.0" text="Description" />
         </columns>
       </TableView>
-      <Button fx:id="deleteButton" layoutX="607.0" layoutY="361.0" mnemonicParsing="false" onAction="#onDeleteShift" text="Delete Shift" />
+      <Button fx:id="deleteButton" layoutX="678.0" layoutY="361.0" mnemonicParsing="false" onAction="#onDeleteShift" text="Delete Shift" />
       <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onBack" text="Back" />
-      <Button fx:id="editButton" layoutX="692.0" layoutY="361.0" mnemonicParsing="false" text="Edit Shift" />
-      <Button fx:id="addShift" layoutX="523.0" layoutY="361.0" mnemonicParsing="false" onAction="#onAddShift" text="Create Shift" />
+      <Button fx:id="addShift" layoutX="590.0" layoutY="361.0" mnemonicParsing="false" onAction="#onAddShift" text="Create Shift" />
    </children>
 </AnchorPane>

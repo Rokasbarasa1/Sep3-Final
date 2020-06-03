@@ -47,30 +47,7 @@ namespace BusinessLogic.Model.shifts
             }
             else
             {
-                return "Database already has this shift in it";
-            }
-        }
-
-        public string UpdateShift(Shift shift)
-        {
-            socketHandler.SendToDatabase("updateShift", shift);
-            string result = socketHandler.GetResponse();
-            if (result.Equals("OK"))
-            {
-                socketHandler.SendToDatabase("updateShift;Confirmed", shift);
-                result = socketHandler.GetResponse();
-                if (result.Equals("OK"))
-                {
-                    return "Success";
-                }
-                else
-                {
-                    return "Failed";
-                }
-            }
-            else
-            {
-                return "Database already has this shift in it";
+                return "Employee already has a shift on that day...";
             }
         }
 

@@ -41,8 +41,6 @@ public class HTTPHandler {
 
             Response response = target.request().get();
             value = response.readEntity(String.class);
-            System.out.println(value);
-
         } catch (ProcessingException e){
             e.fillInStackTrace();
             return "Server not responding";
@@ -56,7 +54,6 @@ public class HTTPHandler {
             client = new ResteasyClientBuilder().build();
             target = client.target(URL);
             response = target.request().delete();
-            System.out.println(response.readEntity(String.class));
         } catch (ProcessingException e) {
             e.printStackTrace();
         }

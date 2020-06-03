@@ -25,7 +25,7 @@ public class JavaServer {
                 i++;
             }
         }catch (IOException | DataConnectionException e) {
-            System.out.println("Something went bad");
+            System.out.println("Error occurred during connection to database");
             e.printStackTrace();
         }
     }

@@ -9,7 +9,7 @@ public class DBConnection implements IDBConnection {
     private final String driver = "com.mysql.cj.jdbc.Driver";
     private final String url = "jdbc:mysql://localhost:3306/sep3?useTimezone=true&serverTimezone=GMT";
     private final String username = "root";
-    private final String password = "Ruf84yww"; //change to your password
+    private final String password = "9691cmsj"; //change to your password
 
 
     private final String schemaName;
@@ -27,19 +27,15 @@ public class DBConnection implements IDBConnection {
     public Connection getConnection() {
         try {
             Class.forName(driver);
-            System.out.println("Connection to drive established");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            System.out.println("Could not get connection to the server...");
         }
         try {
             if (connection == null || connection.isClosed()) {
                 connection = DriverManager.getConnection(url, username, password);
-                System.out.println("Connection to Database has been established...");
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Connection to Database has failed. The connection was not established...");
         }
         return connection;
     }
@@ -52,7 +48,6 @@ public class DBConnection implements IDBConnection {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Connection has not been closed...");
         }
     }
 

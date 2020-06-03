@@ -85,7 +85,6 @@ public class CreateUserController {
             //Just to avoid errors
         } else if (response.getText().equals("Success")){
             viewHandler.openEmployeeListView();
-            System.out.println("Changing to calendar");
         }
     }
 

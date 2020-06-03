@@ -42,7 +42,6 @@ public class ShiftDAO implements IShiftDAO {
                 int year = resultSet.getInt("year");
 
                 String dateString = day + "-" + month + "-" + year;
-                System.out.println(dateString);
                 LocalDate date = LocalDate.parse(dateString, DateTimeFormatter.ofPattern("d-M-yyyy"));;
 
 
@@ -77,7 +76,6 @@ public class ShiftDAO implements IShiftDAO {
                 int year = resultSet.getInt("year");
 
                 String dateString = day + "-" + month + "-" + year;
-                System.out.println(dateString);
                 LocalDate date = LocalDate.parse(dateString, DateTimeFormatter.ofPattern("d-M-yyyy"));;
 
                 shifts.add(new Shift(shift_ID, user_ID, description, manager_ID, date));
@@ -104,7 +102,6 @@ public class ShiftDAO implements IShiftDAO {
                         +"'AND year = '" + shift.getDate().getYear() +"';";
                 preparedStatement = databaseConnection.createPreparedStatement(sql);
                 resultSet = preparedStatement.executeQuery();
-                System.out.println("In the add shift");
                 if(resultSet.next()){
                     databaseConnection.closeConnection();
                     return "NOT";
@@ -114,7 +111,6 @@ public class ShiftDAO implements IShiftDAO {
                 }
             } catch (DataConnectionException| SQLException e) {
                 e.printStackTrace();
-                System.out.println("Problem in database");
                 databaseConnection.closeConnection();
                 return "NOT";
             }
@@ -136,69 +132,6 @@ public class ShiftDAO implements IShiftDAO {
                 return "NOT";
             }
         }
-    }
-
-    @Override
-    public String updateShift(Shift shift, String operation) {
-
-        PreparedStatement preparedStatement;
-        ResultSet resultSet;
-        Shift resultShift;
-        String conclusion = "NOT";
-
-        if (operation.equals("Check")) {
-            try {
-                String sqlSelect = "SELECT Users_ID, Manager_ID, description, day, month, year FROM Shift WHERE Users_ID = "
-                        + shift.getUser_id() + " AND day = " + shift.getDate().getDayOfMonth() + " AND month = "
-                        + shift.getDate().getMonthValue() + " AND year = " + shift.getDate().getYear() + ";";
-                preparedStatement = databaseConnection.createPreparedStatement(sqlSelect);
-                resultSet = preparedStatement.executeQuery();
-
-                while(resultSet.next()) {
-                    int user_id = resultSet.getInt("Users_ID");
-                    int day = resultSet.getInt("day");
-                    int month = resultSet.getInt("month");
-                    int year = resultSet.getInt("year");
-
-                    String dateString = day + "-" + month + "-" + year;
-                    System.out.println(dateString);
-                    LocalDate date = LocalDate.parse(dateString, DateTimeFormatter.ofPattern("d-M-yyyy"));
-
-                    resultShift = new Shift(user_id, date);
-
-                    if (resultShift.getUser_id() == shift.getUser_id() &&
-                            resultShift.getDate().getDayOfMonth() == shift.getDate().getDayOfMonth() &&
-                    resultShift.getDate().getMonthValue() == shift.getDate().getMonthValue() &&
-                    resultShift.getDate().getYear() == shift.getDate().getYear()) {
-                        databaseConnection.closeConnection();
-                        conclusion = "NOT";
-                    } else{
-                        databaseConnection.closeConnection();
-                        conclusion = "OK";
-                    }
-                }
-
-            } catch (DataConnectionException | SQLException e) {
-                e.printStackTrace();
-            }
-        } else {
-            try {
-                String sql = "UPDATE Shift SET day = " + shift.getDate().getDayOfMonth() + ", month = "
-                        + shift.getDate().getMonthValue() + ", year = " + shift.getDate().getYear()
-                        + ", Users_ID = " + shift.getUser_id() + ", description = " + shift.getDescription()
-                        + " WHERE Shift_ID = " + shift.getId() + ";";
-
-                preparedStatement = databaseConnection.createPreparedStatement(sql);
-                preparedStatement.execute();
-                databaseConnection.closeConnection();
-                conclusion = "OK";
-            } catch (DataConnectionException | SQLException e) {
-                e.printStackTrace();
-                databaseConnection.closeConnection();
-                conclusion = "NOT";
-            }
-        }
-        return conclusion;
     }
 
     @Override

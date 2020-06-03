@@ -20,7 +20,6 @@ public class LoginClient implements ILoginClient {
     public String login(User loginCarrier) {
         String PATH ="http://127.0.0.1:5000/api/Login";
         String loginJson = jsonSerializer.toJson(loginCarrier);
-        System.out.println(loginJson);
         response = httpHandler.postToAPI(loginJson, PATH);
         return response;
     }

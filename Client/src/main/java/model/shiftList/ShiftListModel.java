@@ -33,7 +33,7 @@ public class ShiftListModel implements IShiftListModel {
     }
 
     @Override
-    public void saveShift(Shift seleced) {
-        forEditing = seleced;
+    public void saveShift(Shift selected) {
+        forEditing = selected;
     }
 }

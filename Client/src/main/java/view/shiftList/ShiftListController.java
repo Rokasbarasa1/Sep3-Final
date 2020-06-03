@@ -31,8 +31,6 @@ public class ShiftListController {
     @FXML
     private Button deleteButton;
     @FXML
-    private Button editButton;
-    @FXML
     private Button addShift;
 
 
@@ -50,7 +48,6 @@ public class ShiftListController {
         descriptionID.setCellValueFactory(new PropertyValueFactory<Shift, String>("description"));
 
         deleteButton.visibleProperty().bindBidirectional(viewModel.getButtonsProperty());
-        editButton.visibleProperty().bindBidirectional(viewModel.getButtonsProperty());
         viewModel.setFunctionalityDifferences();
         shifts.addAll(viewModel.populateListView());
         table.setItems(shifts);
@@ -64,32 +61,25 @@ public class ShiftListController {
     @FXML
     void onDeleteShift(ActionEvent event) {
         Shift shift = table.getSelectionModel().getSelectedItem();
-        if(shift != null){
+        if (shift != null) {
             boolean delete = false;
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Delete shift");
             alert.setHeaderText("Do you want to delete this shift?");
 
-            ButtonType cancelButtonType =  new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+            ButtonType cancelButtonType = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
             alert.getDialogPane().getButtonTypes().add(cancelButtonType);
 
             Optional<ButtonType> result = alert.showAndWait();
-            if(result.isPresent() && result.get() == ButtonType.OK){
+            if (result.isPresent() && result.get() == ButtonType.OK) {
                 delete = true;
             }
-            if(delete){
+            if (delete) {
                 shift = table.getSelectionModel().getSelectedItem();
                 viewModel.removeShift(shift.getId());
             }
             viewHandler.openShiftListView();
         }
-    }
-
-    @FXML
-    void onEdit(ActionEvent event) {
-        Shift seleced = table.getSelectionModel().getSelectedItem();
-        viewModel.saveShiftForEditing(seleced);
-        //viewHandler.openEditShift();
     }
 
     @FXML

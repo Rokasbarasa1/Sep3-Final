@@ -23,10 +23,6 @@ public class ShiftListViewModel {
         model.removeShift(shiftId);
     }
 
-    public void saveShiftForEditing(Shift seleced) {
-        model.saveShift(seleced);
-    }
-
     public BooleanProperty getButtonsProperty(){
 
         return buttons;
