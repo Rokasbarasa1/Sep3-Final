@@ -27,33 +27,20 @@ CREATE TABLE Users (
 );
 
 -- Test purposes, can be deleted at anytime
-
-INSERT INTO Users (username, manager_ID,  password, firstName, lastName, email, status, accessLevel, dayEmployment, monthEmployment, yearEmployment)
-    VALUE('admin', 3, 'admin', 'admin', 'admin', 'admin@admin.admin', 'ACTIVE', 'MANAGER', 16, 03, 2020  );
+INSERT INTO Users (username, manager_ID, password, firstName, lastName, email, status, accessLevel, dayEmployment, monthEmployment, yearEmployment)
+    VALUE('admin', 0, '92668751', 'admin', 'admin', 'admin@gmail.com', 'ACTIVE', 'MANAGER', 16, 03, 2020  );
 
 INSERT INTO Users (username, manager_ID, password, firstName, lastName, email, status, accessLevel, dayEmployment, monthEmployment, yearEmployment)
-    VALUE('Anders', 3, '1234', 'Anders', 'Sønderby', '264247@via.dk', 'ACTIVE', 'EMPLOYEE', 16, 03, 2020  );
+    VALUE('Anders', 3, '1509442', 'Anders', 'Sonderby', '264247@via.dk', 'ACTIVE', 'EMPLOYEE', 16, 03, 2020  );
 
 INSERT INTO Users (username, manager_ID,  password, firstName, lastName, email, status, accessLevel, dayEmployment, monthEmployment, yearEmployment)
-    VALUE('David', 4, '3556498', 'David', 'Nguyen', '251771@via.dk', 'INACTIVE', 'MANAGER', 16, 03, 2020  );
+    VALUE('David', 1, '3556498', 'David', 'Nguyen', '251771@via.dk', 'Active', 'MANAGER', 16, 03, 2020  );
 
 INSERT INTO Users (username, manager_ID,  password, firstName, lastName, email, status, accessLevel, dayEmployment, monthEmployment, yearEmployment)
-    VALUE('Niklas', 3, '549190650', 'Niklas', 'Krogh', '281335@via.dk', 'ACTIVE', 'MANAGER', 16, 03, 2020  );
+    VALUE('Niklas', 3, '549190650', 'Niklas', 'Krogh', '281335@via.dk', 'ACTIVE', 'EMPLOYEE', 16, 03, 2020  );
 
 INSERT INTO Users (username, manager_ID,  password, firstName, lastName, email, status, accessLevel, dayEmployment, monthEmployment, yearEmployment)
     VALUE('Rokas', 3, '92668751', 'Rokas', 'Barasa', '285047@via.dk', 'ACTIVE', 'EMPLOYEE', 16, 03, 2020  );
-
-INSERT INTO Users (username, manager_ID,  password, firstName, lastName, email, status, accessLevel, dayEmployment, monthEmployment, yearEmployment)
-    VALUE('Human1', 3, 'admin1', 'Nedas', 'Annoying', '281335@via.dk', 'ACTIVE', 'EMPLOYEE', 16, 03, 2020  );
-
-INSERT INTO Users (username, manager_ID,  password, firstName, lastName, email, status, accessLevel, dayEmployment, monthEmployment, yearEmployment)
-    VALUE('Human2', 3, 'admin2', 'Bragi', 'Weed', '285047@via.dk', 'ACTIVE', 'EMPLOYEE', 16, 03, 2020  );
-
-INSERT INTO Users (username, manager_ID,  password, firstName, lastName, email, status, accessLevel, dayEmployment, monthEmployment, yearEmployment)
-    VALUE('Human3', 3, 'admin3', 'Luhan', 'Dady', '281335@via.dk', 'ACTIVE', 'EMPLOYEE', 16, 03, 2020  );
-
-INSERT INTO Users (username, manager_ID,  password, firstName, lastName, email, status, accessLevel, dayEmployment, monthEmployment, yearEmployment)
-    VALUE('Human4', 3, 'admin4', 'Toma&', 'Slovakian?', '285047@via.dk', 'ACTIVE', 'EMPLOYEE', 16, 03, 2020  );
 
 SELECT * FROM Users;
 
@@ -84,27 +71,27 @@ CREATE TABLE Shift (
 -- Test purposes, can be deleted at anytime
 
 INSERT INTO Shift (Users_ID, Manager_ID, description, day, month, year)
-    VALUE (5, 3, 'This is a test of the shift',   04, 05, 2020);
+    VALUE (2, 3, 'This is a shift description',   04, 05, 2020);
 INSERT INTO Shift (Users_ID, Manager_ID, description, day, month, year)
-    VALUE (2, 3,'This is a test of the shift',   05, 05, 2020);
+    VALUE (3, 3,'This is a shift description',   05, 05, 2020);
 INSERT INTO Shift (Users_ID, Manager_ID, description, day, month, year)
-    VALUE (6, 3, 'This is a test of the ',   06, 05, 2020);
+    VALUE (4, 3, 'This is a shift description',   06, 05, 2020);
 INSERT INTO Shift (Users_ID, Manager_ID, description, day, month, year)
-    VALUE (5, 3,'This is a test  the shift',   07, 05, 2020);
+    VALUE (5, 3,'This is a shift description',   07, 05, 2020);
 INSERT INTO Shift (Users_ID, Manager_ID, description, day, month, year)
-    VALUE (9, 3, 'This is a test of the shift',   08, 05, 2020);
+    VALUE (2, 3, 'This is a shift description',   08, 05, 2020);
 INSERT INTO Shift (Users_ID, Manager_ID, description, day, month, year)
-    VALUE (6, 3,'This  test of the shift',   11, 05, 2020);
+    VALUE (3, 3,'This is a shift description',   11, 05, 2020);
 INSERT INTO Shift (Users_ID, Manager_ID, description, day, month, year)
-    VALUE (7, 3, 'This is a  of the shift',   12, 05, 2020);
+    VALUE (4, 3, 'This is a shift description',   12, 05, 2020);
 INSERT INTO Shift (Users_ID, Manager_ID, description, day, month, year)
-    VALUE (8, 3,'f the shift',   14, 05, 2020);
+    VALUE (5, 3,'This is a shift description',   14, 05, 2020);
 INSERT INTO Shift (Users_ID, Manager_ID, description, day, month, year)
-    VALUE (8, 3, 'This is a test of the shift',   13, 05, 2020);
+    VALUE (2, 3, 'This is a shift description',   13, 05, 2020);
 INSERT INTO Shift (Users_ID, Manager_ID, description, day, month, year)
-    VALUE (5, 3,'This is a test of the shift',   29, 05, 2020);
+    VALUE (3, 3,'This is a shift description',   29, 05, 2020);
 INSERT INTO Shift (Users_ID, Manager_ID, description, day, month, year)
-    VALUE (2, 3,'This is a test of the shift',   06, 05, 2020);
+    VALUE (4, 3,'This is a shift description',   06, 05, 2020);
 
 -- -- -- Update Shift Testing -- -- --
 
