@@ -40,7 +40,6 @@ public class AddShiftModel implements IAddShiftModel {
         }
         Shift tmp_shift = new Shift(user_id, description, manager_id, date);
         String api_response = client.postShift(tmp_shift);
-        System.out.println(api_response);
         return api_response;
     }
 }

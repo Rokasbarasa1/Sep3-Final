@@ -203,7 +203,6 @@ public class CalendarViewModel {
             day = format2.format(dt1);
         } catch (ParseException e) {
             e.printStackTrace();
-            System.out.println("date was badly formated");
         }
         return day;
     }
@@ -253,7 +252,6 @@ public class CalendarViewModel {
                 User user = model.getUserFromDatabase(shift.getUser_id());
                 return  "On shift: "+ user.getFname() + " " + user.getLname() + "\n" + "---------------------";
             }catch (NullPointerException e){
-                System.out.println("User was removed");
                 return  "On shift: User was removed " + "\n" + "---------------------";
             }
 

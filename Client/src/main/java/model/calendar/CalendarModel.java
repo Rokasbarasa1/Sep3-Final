@@ -29,7 +29,6 @@ public class CalendarModel implements ICalendarModel {
     @Override
     public void getCurrentUser() {
         currentUser = calendarClient.getUser( Integer.toString(loginModel.getCurrentUser().getId()));
-        System.out.println("User recieved"+ currentUser.getAccessLevel());
     }
 
     @Override

@@ -66,7 +66,6 @@ public class CreateUserViewModel {
             emailPaint.setValue(Color.RED);
         }
         if(usernameCorrect && passwordCorrect && fnameCorrect && lnameCorrect && emailCorrect){
-            System.out.println(status.getValue()+ " " + accesslevel.getValue());
             String API_reponse = model.createUser(username.getValue(), password.getValue(), fname.getValue(), lname.getValue(),
                     email.getValue(), status.getValue(), accesslevel.getValue());
             createEmployeeResponse.setValue(API_reponse);

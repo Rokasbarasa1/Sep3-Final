@@ -27,7 +27,6 @@ public class UserDAO implements IUserDAO {
                         + databaseConnection.getUserTable() + " WHERE username = '" + user.getUsername() + "' AND password = '" + user.getPassword() + "' AND accessLevel = '" + user.getAccessLevel() + "';";
                 PreparedStatement preparedStatement = databaseConnection.createPreparedStatement(sql);
                 ResultSet resultSet = preparedStatement.executeQuery();
-                System.out.println("Got the result");
                 if(resultSet.next()){
                     databaseConnection.closeConnection();
                     return "NOT";
@@ -38,7 +37,6 @@ public class UserDAO implements IUserDAO {
 
             } catch (DataConnectionException| SQLException e) {
                 e.printStackTrace();
-                System.out.println("Problem in database");
                 databaseConnection.closeConnection();
                 return "NOT";
             }
@@ -59,7 +57,6 @@ public class UserDAO implements IUserDAO {
                 return "OK";
             } catch (DataConnectionException | SQLException e) {
                 e.printStackTrace();
-                System.out.println();
                 databaseConnection.closeConnection();
                 return "NOT";
             }
@@ -88,7 +85,6 @@ public class UserDAO implements IUserDAO {
                 String accessLevel = resultSet.getString("accessLevel");
 
                 String dateString = day + "-" + month + "-" + year;
-                System.out.println(dateString);
                 LocalDate date = LocalDate.parse(dateString, DateTimeFormatter.ofPattern("d-M-yyyy"));;
                 user = new User(id, manager_id,  username,  password,  name,  lastname,  email,  status,  date,  accessLevel);
             }
@@ -126,7 +122,6 @@ public class UserDAO implements IUserDAO {
                 String accessLevel = resultSet.getString("accessLevel");
 
                 String dateString = day + "-" + month + "-" + year;
-                System.out.println(dateString);
                 LocalDate date = LocalDate.parse(dateString, DateTimeFormatter.ofPattern("d-M-yyyy"));;
 
                 managedUsers.add(new User(id, manager_id, username, password, name, lastname,  email, status, date, accessLevel));
