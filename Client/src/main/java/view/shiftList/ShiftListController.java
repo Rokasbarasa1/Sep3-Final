@@ -48,6 +48,7 @@ public class ShiftListController {
         descriptionID.setCellValueFactory(new PropertyValueFactory<Shift, String>("description"));
 
         deleteButton.visibleProperty().bindBidirectional(viewModel.getButtonsProperty());
+        addShift.visibleProperty().bindBidirectional(viewModel.getButtonsProperty());
         viewModel.setFunctionalityDifferences();
         shifts.addAll(viewModel.populateListView());
         table.setItems(shifts);
